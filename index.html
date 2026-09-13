@@ -7,10 +7,11 @@
     <title>R7HJ</title>
     <style>
         :root {
-            --bg-color: #f9fafb;
-            --text-color: #1f2937;
-            --accent-color: #2563eb;
-            --border-color: #e5e7eb;
+            /* Новая темная цветовая схема в тон карте */
+            --bg-color: #0b1320; 
+            --text-color: #cbd5e1;
+            --accent-color: #60a5fa;
+            --border-color: #1e293b;
             --container-width: 800px;
         }
 
@@ -19,6 +20,9 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg-color);
+            /* Легкий градиент для глубины космоса */
+            background-image: radial-gradient(circle at center, #1e293b 0%, #0b1320 100%);
+            background-attachment: fixed;
             color: var(--text-color);
             line-height: 1.6;
             min-height: 100vh;
@@ -39,6 +43,7 @@
             font-weight: 700;
             margin-bottom: 3rem;
             letter-spacing: -0.02em;
+            color: #f8fafc;
         }
 
         /* Двухколоночная сетка с вертикальным разделителем */
@@ -67,10 +72,29 @@
             text-decoration: none;
             font-size: 1.125rem;
             padding: 0.5rem 0;
-            transition: opacity 0.2s ease;
+            transition: all 0.2s ease;
         }
 
-        a:hover { opacity: 0.7; text-decoration: underline; }
+        a:hover { 
+            color: #93c5fd; 
+            text-decoration: underline; 
+        }
+
+        /* Стили для картинки, чтобы она гармонично вписывалась */
+        .map-container {
+            margin-top: 3rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .map-image {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
 
         /* Адаптив для смартфонов */
         @media (max-width: 600px) {
@@ -103,8 +127,7 @@
                 <a href="http://kavkaz.qrz.ru/">Сайт kavkaz.qrz.ru</a>
                 <a href="https://www.qrz.com/db/R7HJ">Страничка и лог r7hj/0 на qrz.com</a>
                 <a href="http://176.192.125.149:88/">RN6LJT радиолюбительский сервер</a>
-                <a href="https://rlsk.ucoz.ru/">Радиолюбители Ставропольского края</a>
-                <a href="#">---</a>
+                <!-- a href="https://rlsk.ucoz.ru/">Радиолюбители Ставропольского края</a -->
             </nav>
 
             <!-- Разделитель -->
@@ -112,13 +135,18 @@
 
             <!-- Правый столбец -->
             <nav class="column" aria-label="Ресурсы">
-                <a href="https://github.com/g4klx">Jonathan Naylor (g4klx) на GitHub</a>
+                <!-- a href="https://github.com/g4klx">Jonathan Naylor (g4klx) на GitHub</a -->
                 <a href="https://www.radioid.net/">регистрация на radioid</a>
                 <a href="https://brandmeister.network/">радиолюбительский brandmeister</a>
                 <a href="https://dvref.com/">регистрация рефлекторов на dvref</a>
             </nav>
         </div>
+        
+        <!-- Обертка для картинки -->
+        <div class="map-container">
+            <img src="map.jpg" alt="Карта активности R7HJ" class="map-image">
+        </div>
+
     </div>
-    <img src="map.jpg" alt="###" style="width:160px">
 </body>
 </html>
